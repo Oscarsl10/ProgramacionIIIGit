@@ -1,0 +1,26 @@
+<div class="card bg-light mb-3 my-5">
+    <div class="card-header">Puma</div>
+    <div class="card-body">
+      <h5 class="card-title">Listado Puma</h5>
+      <table class="table table-bordered table-striped">
+        <thead>
+            <th>Id Producto</th>
+            <th>Nombre</th>
+            <th>Fecha Fundación</th>
+            <th>Origen</th>
+            <th>Ingresos Anuales</th>
+            <th>Empleados</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let indice of puma">
+                <td>{{indice.id}}</td>
+                <td>{{indice.nombre}}</td>
+                <td>{{indice.fundacion}}</td>
+                <td>{{indice.origen}}</td>
+                <td>{{indice.ingresos_anuales}}</td>
+                <td>{{indice.empleados}}</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
