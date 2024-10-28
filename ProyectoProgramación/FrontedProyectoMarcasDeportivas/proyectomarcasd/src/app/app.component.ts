@@ -5,11 +5,12 @@ import { FooterComponent } from './footer/footer.component';
 import { AdidasComponent } from './adidas/adidas.component';
 import { NikeComponent } from './nike/nike.component';
 import { PumaComponent } from './puma/puma.component';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, AdidasComponent, NikeComponent, PumaComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, AdidasComponent, NikeComponent, PumaComponent, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
