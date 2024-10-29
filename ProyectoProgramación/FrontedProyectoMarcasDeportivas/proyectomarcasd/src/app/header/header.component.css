@@ -1,5 +1,5 @@
 .colorBarra{
-    background-color: cornflowerblue;
+    background-color: black;
 }
 
 .colorTexto{
@@ -8,9 +8,9 @@
 
 .navbar .nav-link {
     color: #ffffff !important;
-    transition: color 0.3s ease; /* Suaviza la transición de color */
+    transition: color 0.3s ease; 
 }
 
 .navbar .nav-link:hover {
-    color: #003366 !important; /* Color azul oscuro al hacer hover */
+    color: red !important; 
 }

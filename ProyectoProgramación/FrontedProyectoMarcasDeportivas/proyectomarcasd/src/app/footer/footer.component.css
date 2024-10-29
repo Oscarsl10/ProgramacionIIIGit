@@ -1,8 +1,9 @@
 .colorFooter{
-    background-color: cornflowerblue;
+    background-color: black;
 }
 
 .footer{
+    position: fixed;
     bottom: 0px;
     height: 100px;
     width: 100%;
