@@ -5,6 +5,9 @@ import { FooterComponent } from './footer/footer.component';
 import { NikeComponent } from './nike/nike.component';
 import { PumaComponent } from './puma/puma.component';
 import { HomeComponent } from './home/home.component';
+import { FormAdidasComponent } from './adidas/adidasForm/form-adidas.component';
+import { FormNikeComponent } from './nike/nikeForm/form-nike.component';
+import { FormPumaComponent } from './puma/pumaForm/form-puma.component';
 
 export const routes: Routes = [
     {path: '', redirectTo:'/home', pathMatch:'full'},
@@ -13,6 +16,8 @@ export const routes: Routes = [
     {path: 'footer', component: FooterComponent},
     {path: 'nike', component: NikeComponent},
     {path: 'puma', component: PumaComponent},
-    {path: 'home', component: HomeComponent}
-
+    {path: 'home', component: HomeComponent},
+    {path: 'adidas/form', component: FormAdidasComponent},
+    {path: 'nike/form', component: FormNikeComponent},
+    {path: 'puma/form', component: FormPumaComponent}
 ];

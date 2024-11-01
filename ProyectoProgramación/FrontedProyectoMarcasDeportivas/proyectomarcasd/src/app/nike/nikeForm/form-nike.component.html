@@ -1,0 +1,47 @@
+<div class="card bg-dark text-white">
+    <div class="card-header">
+        {{titulo}}
+    </div>
+    <div class="card-body">
+            <form (ngSubmit)="create()">
+                <div class="form-group row">
+                    <label for=" Nombre" class="col-form-label col-sm-2">Nombre:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="nike.nombre" name=" Nombre">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Fundación" class="col-form-label col-sm-2">Fundación:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="nike.fundacion" name="Fundación">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Origen" class="col-form-label col-sm-2">Origen:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="nike.origen" name="Origen">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Ingresos anuales" class="col-form-label col-sm-2">Ingresos anuales:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="nike.ingresos_anuales" name="Ingresos anuales">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Empleados" class="col-form-label col-sm-2">Empleados:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="nike.empleados" name="Empleados">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <button class="btn btn-primary" role="button">
+                            Crear
+                        </button>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
