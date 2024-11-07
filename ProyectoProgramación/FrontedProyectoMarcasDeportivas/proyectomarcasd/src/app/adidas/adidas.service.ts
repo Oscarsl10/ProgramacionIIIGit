@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
-import { ADIDAS } from './adidas.json';
 import { MarcasDeportivasc } from '../marcas_deportivas/marcas-deportivasc';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -13,12 +12,31 @@ export class AdidasService {
 
   constructor(private http:HttpClient) { }
 
-  getAdidas(): Observable <MarcasDeportivasc[]> {
+  //buscar tareas de la base de datos
+  getAdidas():Observable<MarcasDeportivasc[]>{
+    
+    //return of (MarcasDeportivasc);
     return this.http.get(this.urlEndPoint).pipe(
-      map((response)=>response as MarcasDeportivasc[])
+     map((response)=> response as MarcasDeportivasc[])
     )
-  }
+   }
+
   create(adidas:MarcasDeportivasc): Observable<MarcasDeportivasc>{
     return this.http.post<MarcasDeportivasc>(this.urlEndPoint,adidas, {headers:this.httpHeaders})
+  }
+
+  //Método de editar tarea
+  getAdida(id: any):Observable<MarcasDeportivasc>{
+    return this.http.get<MarcasDeportivasc>(`${this.urlEndPoint}/${id}`)
+  }
+
+  //Edición final
+  update(adidas: MarcasDeportivasc):Observable<MarcasDeportivasc>{
+    return this.http.put<MarcasDeportivasc>(`${this.urlEndPoint}/${adidas.id}`, adidas, {headers:this.httpHeaders})
+  }
+
+  //Eliminar
+  delete(id:number):Observable<MarcasDeportivasc>{
+    return this.http.delete<MarcasDeportivasc>(`${this.urlEndPoint}/${id}`, {headers:this.httpHeaders})
   }
 }

@@ -21,10 +21,16 @@
         <tr *ngFor="let indice of nike">
           <td>{{indice.id}}</td>
           <td>{{indice.nombre}}</td>
-          <td>{{indice.fundacion}}</td>
+          <td>{{indice.fecha_fundacion}}</td>
           <td>{{indice.origen}}</td>
           <td>{{indice.ingresos_anuales}}</td>
           <td>{{indice.empleados}}</td>
+          <td>
+            <button type="button" name="editar" [routerLink]="['/nike/form', indice.id]" class="btn btn-primary">Editar</button>
+          </td>
+          <td>
+            <button type="button" name="eliminar" (click)="delete(indice)" class="btn btn-danger">Eliminar</button>
+          </td>
         </tr>
       </tbody>
     </table>

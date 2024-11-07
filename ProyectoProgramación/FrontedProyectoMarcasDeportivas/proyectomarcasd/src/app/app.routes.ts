@@ -19,5 +19,8 @@ export const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'adidas/form', component: FormAdidasComponent},
     {path: 'nike/form', component: FormNikeComponent},
-    {path: 'puma/form', component: FormPumaComponent}
+    {path: 'puma/form', component: FormPumaComponent},
+    {path: 'adidas/form/:id', component: FormAdidasComponent},
+    {path: 'nike/form/:id', component: FormNikeComponent},
+    {path: 'puma/form/:id', component: FormPumaComponent}
 ];

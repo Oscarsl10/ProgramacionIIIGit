@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
-import { NIKE } from './nike.json';
 import { MarcasDeportivasc } from '../marcas_deportivas/marcas-deportivasc';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -14,12 +13,31 @@ export class NikeService {
 
   constructor(private http:HttpClient) { }
 
-  getNike(): Observable <MarcasDeportivasc[]> {
+  //buscar tareas de la base de datos
+  getNike():Observable<MarcasDeportivasc[]>{
+    
+    //return of (MarcasDeportivasc);
     return this.http.get(this.urlEndPoint).pipe(
-      map((response)=>response as MarcasDeportivasc[])
+     map((response)=> response as MarcasDeportivasc[])
     )
-  }
+   }
+
   create(nike:MarcasDeportivasc): Observable<MarcasDeportivasc>{
     return this.http.post<MarcasDeportivasc>(this.urlEndPoint,nike, {headers:this.httpHeaders})
+  }
+
+  //Método de editar tarea
+  getNikee(id: any):Observable<MarcasDeportivasc>{
+    return this.http.get<MarcasDeportivasc>(`${this.urlEndPoint}/${id}`)
+  }
+
+  //Edición final
+  update(nike: MarcasDeportivasc):Observable<MarcasDeportivasc>{
+    return this.http.put<MarcasDeportivasc>(`${this.urlEndPoint}/${nike.id}`, nike, {headers:this.httpHeaders})
+  }
+
+  //Eliminar
+  delete(id:number):Observable<MarcasDeportivasc>{
+    return this.http.delete<MarcasDeportivasc>(`${this.urlEndPoint}/${id}`, {headers:this.httpHeaders})
   }
 }

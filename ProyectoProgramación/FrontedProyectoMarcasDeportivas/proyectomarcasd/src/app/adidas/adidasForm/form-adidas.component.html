@@ -3,7 +3,7 @@
         {{titulo}}
     </div>
     <div class="card-body">
-            <form (ngSubmit)="create()">
+            <form >
                 <div class="form-group row">
                     <label for=" Nombre" class="col-form-label col-sm-2">Nombre:</label>
                     <div class="col-sm-6">
@@ -13,7 +13,7 @@
                 <div class="form-group row">
                     <label for="Fundación" class="col-form-label col-sm-2">Fundación:</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" [(ngModel)]="adidas.fundacion" name="Fundación">
+                        <input type="text" class="form-control" [(ngModel)]="adidas.fecha_fundacion" name="Fundación">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -37,9 +37,14 @@
 
                 <div class="form-group row">
                     <div class="col-sm-6">
-                        <button class="btn btn-primary" role="button">
+                        <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!adidas.id else elseBlock">
                             Crear
                         </button>
+
+                        <ng-template #elseBlock>
+                            <button class="btn btn-primary" role="button" (click)='update()'>Editar</button>
+                        </ng-template>
+
                     </div>
                 </div>
             </form>
